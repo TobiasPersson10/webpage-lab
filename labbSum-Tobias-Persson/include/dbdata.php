@@ -1,9 +1,9 @@
-<?php 
+<?php
 //Connection med DB
-$uname = "dbtrain_789";
-$pass = "rvpuvn";
-$host = "dbtrain.im.uu.se";
-$dbname = "dbtrain_789";
+$servername = "localhost";
+$user = 'root';
+$password = '';
+$dbname = 'db1';
 
-$connection = new mysqli ( $host , $uname , $pass , $dbname );
+$connection = new mysqli ( $servername , $user , $password , $dbname );
 ?>
