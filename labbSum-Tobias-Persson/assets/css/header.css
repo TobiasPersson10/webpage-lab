@@ -1,0 +1,106 @@
+html{
+    height: 100%;
+}
+body{
+    background: url(pic1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    font-family: sans-serif;   
+}
+
+h1{
+    text-align: center;
+}
+.display{
+    text-align: left;
+    margin-left: 20%;
+}
+
+p{
+    text-align: center;
+    margin-top: 60px;
+}
+
+.buttons{
+    background-color: #F0FFFF;
+    color: black;
+    padding: 14px 20px;
+    position: center;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    margin-left: 27px;
+    margin-top: 10px;
+}
+.loginForm{
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.loginForm h1{
+    font-size: 35px;
+}
+.loginForm p{
+    font-size: 20px;
+}
+.loginForm .commentform .textbox{
+    height: 100px;
+}
+
+.textbox{
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    margin-bottom: 10px;   
+}
+
+.registerlink{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.links{
+    text-align: center;
+    margin-top: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+a:link, a:visited {
+    background-color: #F0FFFF;
+    color: black;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+
+a:hover, a:active, .buttons:hover {
+    background-color: lightskyblue;
+}
+
+
+.comments{
+    width: 70%;
+    padding: 20px;
+    margin-bottom: 4px;
+    border:1px solid darkblue;
+    border-radius: 4px;
+    background-color: lightskyblue;
+    font-size: 15px;
+}
+
+.errormsg{
+    color: red;
+    margin-top: 300px;
+}
+
+

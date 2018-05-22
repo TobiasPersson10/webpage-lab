@@ -1,0 +1,5 @@
+Servervalidering: Gör det till en funktion och anropa.
+
+När man skriver in fel mail i inlogget, alerta ett felmeddelande. (CSS?)
+
+Fyll i mailen som tillhör den inloggade användaren i kommentarsformuläret
