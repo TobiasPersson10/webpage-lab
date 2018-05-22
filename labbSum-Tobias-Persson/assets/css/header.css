@@ -6,7 +6,7 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: repeat-y;
-    font-family: sans-serif;   
+    font-family: sans-serif;
 }
 
 h1{
@@ -14,7 +14,7 @@ h1{
 }
 .display{
     text-align: left;
-    margin-left: 20%;
+    margin-left: 25%;
 }
 
 p{
@@ -55,7 +55,7 @@ p{
     width: 100%;
     padding: 12px 20px;
     box-sizing: border-box;
-    margin-bottom: 10px;   
+    margin-bottom: 10px;
 }
 
 .registerlink{
@@ -102,5 +102,3 @@ a:hover, a:active, .buttons:hover {
     color: red;
     margin-top: 300px;
 }
-
-
