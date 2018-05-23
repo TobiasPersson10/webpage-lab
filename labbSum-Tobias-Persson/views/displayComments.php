@@ -1,14 +1,14 @@
 <?php
     session_start();
-    include '..\include\dbdata.php';
-    include '..\include\functions.php';
+    include '../include/dbdata.php';
+    include '../include/functions.php';
 
 if(isset($_SESSION['user'])){
     echo "<h1 class='display'>Kommentarer</h1>";
     fetchComment($connection);
 }
 else{
-    header("Location: ..\index.php");
+    header("Location: ../index.php");
 }
 ?>
 
@@ -21,6 +21,6 @@ else{
          <div class="displaylinks">
          <a href="..\commentpage.php">Skriv en ny kommentar</a>
          <a href="..\index.php">Startsida</a>
-         </div>  
+         </div>
     </body>
 </html>

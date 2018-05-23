@@ -1,5 +1,5 @@
-<?php 
-include('include\dbdata.php');
+<?php
+include('include/dbdata.php');
 session_start();
 
 $error = "";
@@ -26,8 +26,6 @@ $resultOne = $connection->query($queryOne);
 
 $connection->close();
 
-header('Location: views\displayComments.php');
+header('Location: views/displayComments.php');
 }
 ?>
-
-

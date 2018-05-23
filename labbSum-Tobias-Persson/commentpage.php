@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('include\dbdata.php');
+include('include/dbdata.php');
 
 
 
@@ -10,38 +10,36 @@ if(isset($_SESSION['user'])):  ?>
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Kommentatorsforumuläret </title> 
+    <title> Kommentatorsforumuläret </title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets\css\header.css">
-    
+
   <script src="assets\js\javas.js"></script>
   </head>
   <body>
         <a href="index.php">Startsida</a>
-        <a href="include/logout-process.php">Logga ut</a>
+        <a href="include\logout-process.php">Logga ut</a>
       <div class="loginForm">
       <h1>Kommentatorn</h1>
       <p>Här kan du kommentera dina tankar.</p>
-      <div class="commentform">    
+      <div class="commentform">
       <form name="form" method="POST" action="save.php" onsubmit="return validateCommentForm()">
 
             <textarea class="textbox" name="comment" placeholder="Vänligen skriv en kommentar här..."></textarea>
 
             <input class="buttons" type="submit" name="submitbtn" value="Kommentera">
             <input class="buttons" type="reset" value="Töm fälten">
-       </form>   
+       </form>
        </div>
-       </div>  
+       </div>
 
   </body>
-  </html>  
-      
+  </html>
 
 
-<?php 
+
+<?php
 
 else:
     header("Location: index.php");
 endif; ?>
- 
-

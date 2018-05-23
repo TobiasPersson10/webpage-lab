@@ -1,6 +1,6 @@
-<?php 
+<?php
 session_start();
-include('include\dbdata.php');
+include('include/dbdata.php');
 
 if(!isset($_SESSION['user'])){
 //Generera random string till saltet
@@ -51,7 +51,7 @@ $regex = "/\S+\@+\S+\.+\S+/";
 
 if(!preg_match($regex,$email)){
     echo "Vänligen ange en giltig epostadress";
-    $error = true;  
+    $error = true;
 }
 
 // 5. Spara input i databasen om inga errors finns.

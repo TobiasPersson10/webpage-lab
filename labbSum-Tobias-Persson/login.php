@@ -4,13 +4,13 @@
 if(isset($_POST['submitlogin'])){
 session_start();
 
-include('include\dbdata.php');
+include('include/dbdata.php');
 
 
   //Spara input som variablar, skydda från SQL-injections.
   $email = mysqli_real_escape_string($connection, $_POST["email"]);
   $password = mysqli_real_escape_string($connection, $_POST["password"]);
-  
+
 
   //Validate på server side.
   $error = false;
@@ -31,7 +31,7 @@ include('include\dbdata.php');
 
   if(!preg_match($regex,$email)){
       echo "Vänligen ange en giltig epostadress";
-      $error = true;  
+      $error = true;
       header("Location: index.php");
   }
   // 5. Spara input i databasen om inga errors finns.
@@ -39,7 +39,7 @@ include('include\dbdata.php');
 
 
 
-  
+
   //Hämta kolumnen salt från databasen i den rad som stämmer överrens med input; email.
   $fetchSalt = "SELECT salt FROM Users WHERE email = '$email'";
   $query = mysqli_query($connection,$fetchSalt);
@@ -55,8 +55,8 @@ include('include\dbdata.php');
   }
 
   //Hasha lösenordet med motsvarande salt
-  $hashed_salt = md5($concat); 
- 
+  $hashed_salt = md5($concat);
+
   //Jämför det ifyllda hash(lösenord+salt) med password-kolumnen i databasen
   $hashedPass = "SELECT password FROM Users WHERE email = '$email'";
   $queryTwo = mysqli_query($connection,$hashedPass);
@@ -69,7 +69,7 @@ include('include\dbdata.php');
     else{
     $_SESSION["InvalidInput"] = "Invalid password";
     header("Location: index.php");
-    
+
     }
   }
 
