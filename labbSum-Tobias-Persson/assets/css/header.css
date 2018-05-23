@@ -2,7 +2,7 @@ html{
     height: 100%;
 }
 body{
-    background: url(pic1.jpg);
+    background: url(../img/pic1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: repeat-y;
