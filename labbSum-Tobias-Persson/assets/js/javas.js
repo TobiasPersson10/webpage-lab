@@ -9,18 +9,21 @@ function validateRegForm() {
         return false;
     }
     if (password.trim() == ""){
-    	alert("Vänligen skriv in ett lösenord");
-    	return false;
+    	  alert("Vänligen skriv in ett lösenord");
+       	return false;
     }
-    //Kontrollerar att emailen innehåller @ och . 
-    var regex = /\S+\@+\S+\.+\S+/;
+    //Kontrollerar att emailen innehåller @ och .
+    ///\s{1,}|\S+\@+\S+\.+\S+\s|\s{1,}/;
+    var regex = /^\S+\@+\S+\.+\S+$/;
     if(regex.test(email) == false)
     {
         alert ("Du har angivit en ogiltig epostadress. Den måste innehålla ett @-tecken samt en punkt. Exempel: user@uu.se");
-    	return false;
+    	  return false;
     }
+
+
 }
-  
+
 //Validera inloggningsforumuläret
 function validateLoginForm() {
     var emailTwo = document.forms["loginform"]["email"].value;
@@ -34,14 +37,14 @@ function validateLoginForm() {
     	alert("Vänligen skriv in ett lösenord");
     	return false;
     }
-    //Kontrollerar att emailen innehåller @ och . 
+    //Kontrollerar att emailen innehåller @ och .
     var regex = /\S+\@+\S+\.+\S+/;
     if(regex.test(emailTwo) == false)
     {
         alert ("Du har angivit en ogiltig epostadress. Den måste innehålla ett @-tecken samt en punkt. Exempel: user@uu.se");
     	return false;
     }
-    
+
 }
 
 //Validera kommentarsformuläret
@@ -51,6 +54,5 @@ function validateCommentForm() {
     	alert("Vänligen skriv en kommentar");
     	return false;
     }
-    
-}  
- 
+
+}

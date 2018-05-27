@@ -98,7 +98,12 @@ a:hover, a:active, .buttons:hover {
     font-size: 15px;
 }
 
-.errormsg{
+.errormsg--index{
     color: red;
-    margin-top: 300px;
+    margin-top: 250px;
+}
+
+.errormsg--register{
+    color: red;
+    margin-top: 180px;
 }

@@ -24,7 +24,7 @@ $res = mysqli_query($connection, $checkUser);
 if(mysqli_num_rows($res) > 0){
     $_SESSION["EmailTaken"] = "Email already taken";
     header("Location: register.php");
-	exit();
+		exit();
 }
 
 //Konkatenera salt och password.
@@ -36,25 +36,25 @@ $hashedpass = md5($salt_pass);
 
 //Validate på server side.
 $error = false;
-// 2. trimma email och kolla så den inte är tom
+// 1. trimma email och kolla så den inte är tom
 if(empty(trim($email))){
     echo "Vänligen fyll i din email";
     $error = true;
 }
-// 3. trimma kommentaren och kolla så den inte är tom
+// 2. trimma kommentaren och kolla så den inte är tom
 if(empty(trim($password))){
     echo "Vänligen skriv in ett lösenord";
     $error = true;
 }
-// 4. Validera emailen så den har @ och .
-$regex = "/\S+\@+\S+\.+\S+/";
+// 3. Validera emailen så den har @ och .
+$regex = "/^\S+\@+\S+\.+\S+$/";
 
 if(!preg_match($regex,$email)){
     echo "Vänligen ange en giltig epostadress";
     $error = true;
 }
 
-// 5. Spara input i databasen om inga errors finns.
+// 4. Spara input i databasen om inga errors finns.
 if(!$error) {
 $queryOne = "INSERT INTO Users (email, password, salt) VALUES ('$email', '$hashedpass','$randSalt')";
 $resultOne = $connection->query($queryOne);

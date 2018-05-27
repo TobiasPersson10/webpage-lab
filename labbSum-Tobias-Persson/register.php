@@ -22,7 +22,7 @@ if(!isset($_SESSION['user'])){  ?>
       //Sessionen skapas i register-process
       //Sedan avslutas sessionen för att undvika felmeddelandet.
       if(isset($_SESSION['EmailTaken'])){
-      echo "<p class='errormsg'>".$_SESSION['EmailTaken']."</p>";
+      echo "<p class='errormsg--register'>".$_SESSION['EmailTaken']."</p>";
       session_destroy();
       }
       ?>
@@ -32,11 +32,8 @@ if(!isset($_SESSION['user'])){  ?>
       <p> Fyll i fälten för att registrera dig</p>
 
       <form name="regform" method="POST" action="register-process.php" onsubmit="return validateRegForm()">
-
-
             <input class="textbox" type="text" name="email" placeholder="Vänligen skriv din email-adress här...">
             <input class="textbox" type="password" name="password" placeholder="Vänligen välj ett lösenord här...">
-
             <input class="buttons" name="submitregister" type="submit" value="Registrera">
             <input class="buttons" type="reset" value="Töm fälten">
        </form>

@@ -35,6 +35,8 @@ include('include/dbdata.php');
       header("Location: index.php");
   }
   // 5. Spara input i databasen om inga errors finns.
+
+
   if(!$error) {
 
 

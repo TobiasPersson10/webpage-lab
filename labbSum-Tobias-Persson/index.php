@@ -16,29 +16,23 @@ if(!isset($_SESSION['user'])): ?>
     <body>
 <?php
 if(isset($_SESSION['InvalidInput'])){
-    echo "<p class='errormsg'>".$_SESSION['InvalidInput']."</p>";
+    echo "<p class='errormsg--index'>".$_SESSION['InvalidInput']."</p>";
+    session_destroy();
     }
 ?>
     <div class="loginForm">
         <h1> Kommentatorn </h1>
-
         <form name="loginform" method="POST" action="login.php" onsubmit="return validateLoginForm()">
-
             <input class="textbox" type="text" name="email" placeholder="Email">
             <input class="textbox" type="password" name="password" placeholder="Lösenord">
-
             <button class="buttons" type="submit" name="submitlogin">Logga in</button>
-
             <div class="registerlink">
             <a href="register.php">Registrera dig</a>
            </div>
-
         </form>
-
     </div>
     </body>
 </html>
-
 
 <?php
 else:
