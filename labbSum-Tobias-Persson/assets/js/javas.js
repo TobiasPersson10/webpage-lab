@@ -12,8 +12,7 @@ function validateRegForm() {
     	  alert("Vänligen skriv in ett lösenord");
        	return false;
     }
-    //Kontrollerar att emailen innehåller @ och .
-    ///\s{1,}|\S+\@+\S+\.+\S+\s|\s{1,}/;
+    //Kontrollerar att emailen är utan whitespace och att den innehåller @ och . 
     var regex = /^\S+\@+\S+\.+\S+$/;
     if(regex.test(email) == false)
     {
