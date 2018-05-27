@@ -100,10 +100,10 @@ a:hover, a:active, .buttons:hover {
 
 .errormsg--index{
     color: red;
-    margin-top: 250px;
+    margin-top: 130px;
 }
 
 .errormsg--register{
     color: red;
-    margin-top: 180px;
+
 }
