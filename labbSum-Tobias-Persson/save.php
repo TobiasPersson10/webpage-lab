@@ -1,4 +1,5 @@
 <?php
+//Skickas hit efter att ha skrivit en kommentar.
 include('include/dbdata.php');
 session_start();
 
@@ -20,12 +21,9 @@ if(empty(trim($kommentar))){
 
 // 2. Spara input i databasen om inga errors finns.
 if(!$error) {
-
 $queryOne = "INSERT INTO AllComments (Email, Kommentar) VALUES ('$email','$kommentar')";
 $resultOne = $connection->query($queryOne);
-
 $connection->close();
-
 header('Location: views/displayComments.php');
 }
 ?>

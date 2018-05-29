@@ -15,6 +15,7 @@ if(!isset($_SESSION['user'])): ?>
     </head>
     <body>
 <?php
+//Om användarens input inte stämmer överrens med databasens.
 if(isset($_SESSION['InvalidInput'])){
     echo "<p class='errormsg--index'>".$_SESSION['InvalidInput']."</p>";
     session_destroy();
@@ -33,11 +34,9 @@ if(isset($_SESSION['InvalidInput'])){
     </div>
     </body>
 </html>
-
 <?php
 else:
 ?>
-
 <html>
 <head>
         <title> Startsida </title>

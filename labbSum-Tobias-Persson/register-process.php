@@ -30,7 +30,6 @@ if(mysqli_num_rows($res) > 0){
 //Konkatenera salt och password.
 $salt_pass = $randSalt.$password;
 
-
 //Hasha
 $hashedpass = md5($salt_pass);
 

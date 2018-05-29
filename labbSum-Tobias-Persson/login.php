@@ -6,11 +6,9 @@ session_start();
 
 include('include/dbdata.php');
 
-
   //Spara input som variablar, skydda från SQL-injections.
   $email = mysqli_real_escape_string($connection, $_POST["email"]);
   $password = mysqli_real_escape_string($connection, $_POST["password"]);
-
 
   //Validate på server side.
   $error = false;
@@ -35,13 +33,7 @@ include('include/dbdata.php');
       header("Location: index.php");
   }
   // 5. Spara input i databasen om inga errors finns.
-
-
   if(!$error) {
-
-
-
-
   //Hämta kolumnen salt från databasen i den rad som stämmer överrens med input; email.
   $fetchSalt = "SELECT salt FROM Users WHERE email = '$email'";
   $query = mysqli_query($connection,$fetchSalt);
@@ -63,21 +55,22 @@ include('include/dbdata.php');
   $hashedPass = "SELECT password FROM Users WHERE email = '$email'";
   $queryTwo = mysqli_query($connection,$hashedPass);
 
+  //Om det stämmer, logga in och skicka till kommentarssidan.
   if ($rowTwo = mysqli_fetch_assoc($queryTwo)){
     if($rowTwo['password'] == $hashed_salt){
       $_SESSION['user'] = $email;
       header('Location: commentpage.php');
     }
+  //Om det inte stämmer, starta session "InvalidInput" och skicka till index.
     else{
     $_SESSION["InvalidInput"] = "Invalid password";
     header("Location: index.php");
-
     }
   }
-
   $connection->close();
-  }//Stänger servervalideringen.
+  }
 }
+  //Om användaren inte kommit hit via inloggningsknappen
  else{
    header("Location: index.php");
 }

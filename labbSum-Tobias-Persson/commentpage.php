@@ -13,7 +13,6 @@ if(isset($_SESSION['user'])):  ?>
     <title> Kommentatorsforumuläret </title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets\css\header.css">
-
   <script src="assets\js\javas.js"></script>
   </head>
   <body>
@@ -24,22 +23,15 @@ if(isset($_SESSION['user'])):  ?>
       <p>Här kan du kommentera dina tankar.</p>
       <div class="commentform">
       <form name="form" method="POST" action="save.php" onsubmit="return validateCommentForm()">
-
             <textarea class="textbox" name="comment" placeholder="Vänligen skriv en kommentar här..."></textarea>
-
             <input class="buttons" type="submit" name="submitbtn" value="Kommentera">
             <input class="buttons" type="reset" value="Töm fälten">
        </form>
        </div>
        </div>
-
   </body>
   </html>
-
-
-
 <?php
-
 else:
     header("Location: index.php");
 endif; ?>

@@ -2,7 +2,6 @@
 session_start();
 include('include/dbdata.php');
 
-
 //Om ej inloggad, visa formulär för att registrera sig. Annars, redirecta till startsidan (index.php)
 if(!isset($_SESSION['user'])){  ?>
 <!DOCTYPE html>
@@ -15,8 +14,6 @@ if(!isset($_SESSION['user'])){  ?>
   </head>
   <body>
       <a href="index.php">Startsida</a>
-
-
       <?php
       //Om email redan finns aktiveras denna session och skriver ut ett felmeddelande.
       //Sessionen skapas i register-process
@@ -26,11 +23,9 @@ if(!isset($_SESSION['user'])){  ?>
       session_destroy();
       }
       ?>
-
       <div class="loginForm">
       <h1> Registrering </h1>
       <p> Fyll i fälten för att registrera dig</p>
-
       <form name="regform" method="POST" action="register-process.php" onsubmit="return validateRegForm()">
             <input class="textbox" type="text" name="email" placeholder="Vänligen skriv din email-adress här...">
             <input class="textbox" type="password" name="password" placeholder="Vänligen välj ett lösenord här...">
@@ -38,13 +33,10 @@ if(!isset($_SESSION['user'])){  ?>
             <input class="buttons" type="reset" value="Töm fälten">
        </form>
        <!-- En knapp för att gå logga in (Redirectar till index) -->
-
        <form method="POST" action="index.php">
        <p>Redan registrerad?</p>
        <button class="buttons" type="submit" name="submitlogin">Logga in</button>
        </form>
-
-
   </body>
 </html>
 <?php }
